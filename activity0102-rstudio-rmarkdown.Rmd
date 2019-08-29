@@ -66,15 +66,21 @@ star_data %>%
 
 ### Exercise 4
 
-(Add code and narrative as needed. Note that two R chunks are given but they are not labeled. Use the convention from above to name them appropriately.)
+# Visualization of circle data
+```{r plot-star}
+circle_data <- datasaurus_dozen %>%
+  filter(dataset == "circle")
 
-```{r}
-
+ggplot(data = circle_data, mapping = aes(x = x, y = y)) +
+  geom_point()
 ```
 
-```{r}
-
+# calculation of correlation coefficient
+```{r cor-star}
+circle_data %>%
+  summarize(r = cor(x, y))
 ```
+# r = -0.0683
 
 ### Exercise 5
 
